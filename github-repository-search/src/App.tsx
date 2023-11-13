@@ -12,7 +12,7 @@ function App() {
         <div className="col-span-1 flex items-center">
           <>
             <Sidebar />
-            <Seperator />
+            <Seperator vertical={true}/>
           </>
         </div>
         <div className="col-span-3">
