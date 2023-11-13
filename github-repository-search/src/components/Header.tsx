@@ -7,7 +7,7 @@ function Header() {
       loading="lazy"
       src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f0f8407-ed08-4c33-b4d7-2145ae606f99?apiKey=e41223409040441ba2e098cd3435d86b&"
       className="aspect-[1.03] object-contain object-center w-[76px] fill-zinc-800 overflow-hidden max-w-full"
-      alt="Image description"
+      alt="description"
     />
   </section>
   );
