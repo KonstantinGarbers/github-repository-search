@@ -26,27 +26,25 @@ function App() {
   return (
     <>
       <Header />
-      {error ? (
-        <>Error when fetching github user</>
-      ) : (
-        <main className="grid grid-cols-4 gap-0 pt-4 px-4">
-          {loading ? (
-            <div>Loading..</div>
-          ) : (
-            <>
-              <div className="col-span-1 md:flex hidden">
-                <>
-                  <Sidebar />
-                  <Seperator vertical={true} />
-                </>
-              </div>
-              <div className="md:col-span-3 col-span-4">
-                <Content />
-              </div>
-            </>
-          )}
-        </main>
-      )}
+      <main className="grid grid-cols-4 gap-0 pt-4 px-4">
+        {loading ? (
+          <>Loading..</>
+        ) : error ? (
+          <>Error when fetching github user</>
+        ) : (
+          <>
+            <div className="col-span-1 md:flex hidden">
+              <>
+                <Sidebar />
+                <Seperator vertical={true} />
+              </>
+            </div>
+            <div className="md:col-span-3 col-span-4">
+              <Content />
+            </div>
+          </>
+        )}
+      </main>
     </>
   );
 }
