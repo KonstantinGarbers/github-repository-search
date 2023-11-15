@@ -4,7 +4,11 @@ import { RepositoryNode } from "../../interfaces/RepositoryNode";
 function RepoCard(repo: RepositoryNode) {
   return (
     <div className="w-full bg-white border border-gray-200 rounded-lg p-4">
-      <h2 className="text-lg font-semibold underline"><a href={repo.url} target="_blank" rel="noopener noreferrer">{repo.name}</a></h2>
+      <h2 className="text-lg font-semibold underline">
+        <a href={repo.url} target="_blank" rel="noopener noreferrer">
+          {repo.name}
+        </a>
+      </h2>
       <div className="text-gray-600 text-sm mt-2">
         <span>{repo.primaryLanguage?.name}</span>
       </div>
@@ -28,7 +32,7 @@ function RepoCard(repo: RepositoryNode) {
           <span>{repo.stargazerCount} stars</span>
         </div>
         <div className="text-gray-600 text-sm">
-          Updated on {repo.updatedAt?.getTime()}
+          Updated at {repo.updatedAt?.toString().split("T")[0].replace(/-/g, "/")}
         </div>
       </div>
     </div>

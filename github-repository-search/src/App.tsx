@@ -24,6 +24,7 @@ function App() {
               descriptionHTML
               url
               stargazerCount
+              updatedAt
               primaryLanguage {
                 color
                 name
@@ -39,6 +40,7 @@ function App() {
   const updateUser = useGithubStore((state) => state.updateUser);
 
   if (data) {
+    console.log(data)
     updateUser(data.user);
   }
   if (error) {
