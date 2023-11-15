@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -8,14 +7,17 @@ import {
   useQuery,
   gql,
 } from "@apollo/client";
+import { UserState } from "./interfaces/states/UserState";
+import { useGithubStore } from "./store/GithubStore";
 
 function App() {
 
   const GET_GITHUB = gql`
-  query GetGithub {
+    query GetGithub {
     user(login: "AlexPerathoner") {
       name
       bioHTML
+      avatarUrl
       repositories(first: 100 orderBy:{
         field:STARGAZERS
         direction:DESC
@@ -38,7 +40,11 @@ function App() {
   `;
 
 const { loading, error, data } = useQuery(GET_GITHUB);
-if (data) {console.log(data)};
+const updateUser = useGithubStore((state) => state.updateUser)
+
+if (data) {
+  updateUser(data.user);
+};
 if (error) {console.log(error)};
 
 

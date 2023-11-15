@@ -20,7 +20,6 @@ const authLink = new ApolloLink((operation, forward) => {
       Authorization: `Bearer `,
     },
   });
-  console.log(process.env.GITHUB_TOKEN)
   return forward(operation);
 });
 const client = new ApolloClient({
