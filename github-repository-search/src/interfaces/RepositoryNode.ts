@@ -5,5 +5,6 @@ export interface RepositoryNode {
     descriptionHTML: string;
     url: string;
     stargazerCount: number;
+    updatedAt: Date;
     primaryLanguage: Language;
 }  

@@ -1,28 +1,11 @@
 import React from "react";
 import Seperator from "../../shared/Seperator";
 import RepoCard from "./RepoCard";
+import { useGithubStore } from "../../store/GithubStore";
+import { RepositoryEdge } from "../../interfaces/RepositoryEdge";
 
 function Content() {
-  const formCount = 3;
-
-  const renderRepositories = () => {
-    const repositories = [];
-
-    for (let i = 0; i < formCount; i++) {
-      repositories.push(
-          <div>
-          <Seperator vertical={false} />
-          <RepoCard
-            repoName="test"
-            language="test"
-            stars={0}
-            lastUpdated="test" />
-        </div>
-      );
-    }
-
-    return repositories;
-  };
+  const repositories: RepositoryEdge[] = useGithubStore((state) => state.repositories.edges);
 
   return (
     <section className="flex flex-col items-stretch">
@@ -36,7 +19,12 @@ function Content() {
           Search
         </button>
       </header>
-      {renderRepositories()}
+      {repositories.map((repo, index) => (
+        <React.Fragment key={index}>
+          <Seperator vertical={false} />
+          <RepoCard {...repo.node} />
+        </React.Fragment>
+      ))}
     </section>
   );
 }

@@ -53,13 +53,13 @@ function App() {
           <div>Loading..</div>
         ) : (
           <>
-            <div className="col-span-1 flex items-center">
+            <div className="col-span-1 md:flex hidden">
               <>
                 <Sidebar />
                 <Seperator vertical={true} />
               </>
             </div>
-            <div className="col-span-3">
+            <div className="md:col-span-3 col-span-4">
               <Content />
             </div>
           </>
