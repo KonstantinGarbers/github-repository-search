@@ -9,7 +9,6 @@ import {
   ApolloClient,
   InMemoryCache,
 } from "@apollo/client";
-
 const httpLink = createHttpLink({
   uri: "https://api.github.com/graphql",
 });
@@ -17,7 +16,7 @@ const authLink = new ApolloLink((operation, forward) => {
   // TODO: add bearer token support
   operation.setContext({
     headers: {
-      Authorization: `Bearer `,
+      Authorization: `Bearer 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`,
     },
   });
   return forward(operation);
