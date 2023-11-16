@@ -27,7 +27,7 @@ function App (): ReactElement {
   const updateUser = useGithubStore((state) => state.updateUser)
 
   if (data) {
-    updateUser(data.user)
+        updateUser(data.user)
   }
   if (error) {
     console.log(error)

@@ -14,7 +14,7 @@ function Sidebar (): ReactElement {
   const login = useGithubStore((state) => state.login)
 
   return (
-    <div className="flex flex-col items-stretch">
+    <div className="flex flex-col items-stretch w-full">
       <img
         loading="lazy"
         srcSet={avatarUrl}
