@@ -22,8 +22,8 @@ Run the application by using `npm run start`.
 
 ## Using the application
 To view a certain profile, all you need to do is to append the github username to the url.
-To exemplify this: If you desire to access the github user **KonstantinGarbers** page, you would access the page using `http://localhost:3000/KonstantinGarbers`.
+To exemplify this: If you desire to access the github user **KonstantinGarbers**, you would access the page using `http://localhost:3000/KonstantinGarbers`.
 
 ## Future improvements
-- Add Github OAuth to avoid having to set bearer token in code and make deployment possible
-- Add page that asks for username, so that the user doesn't need to type in the username into the url
+- Add Github OAuth to avoid having to set the bearer token within the code and make deployment possible.
+- Add page/functionality to ask for the username, so that the user doesn't need to type the username into the url.
