@@ -30,6 +30,7 @@ function Content (): ReactElement {
           className="border flex w-full h-full flex-col rounded-xl border-solid border-gray-400 max-md:max-w-full p-2"
           aria-label="Main Navigation"
           value={searchWord}
+          placeholder='Search for repositories...'
           onChange={(e) => { setSearchWord(e.target.value) }}
         />
       </header>

@@ -10,15 +10,15 @@ import {
   ApolloClient,
   InMemoryCache
 } from '@apollo/client'
+import { BEARER_TOKEN } from './credentials'
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql'
 })
 const authLink = new ApolloLink((operation, forward) => {
-  // TODO: add bearer token support
   operation.setContext({
     headers: {
-      Authorization: 'Bearer '
+      Authorization: 'Bearer ' + BEARER_TOKEN
     }
   })
   return forward(operation)

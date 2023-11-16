@@ -15,10 +15,10 @@ function App (): ReactElement {
   })
   const updateUser = useGithubStore((state) => state.updateUser)
 
-  if (!!data) {
+  if (data) {
     updateUser(data.user)
   }
-  if (!!error) {
+  if (error) {
     console.log(error)
   }
 
@@ -26,11 +26,11 @@ function App (): ReactElement {
     <>
       <Header />
       <main className="grid grid-cols-4 gap-0 pt-4 px-4">
-        {!!loading
+        {loading
           ? (
           <>Loading..</>
             )
-          : !!error
+          : error
             ? (
           <>Error when fetching github user</>
               )
