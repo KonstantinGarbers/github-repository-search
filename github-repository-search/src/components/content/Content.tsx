@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement } from 'react'
+import React, { useState, useEffect, type ReactElement } from 'react'
 import Seperator from '../../shared/Seperator'
 import RepoCard from './RepoCard'
 import { useGithubStore } from '../../store/GithubStore'
@@ -24,17 +24,14 @@ function Content (): ReactElement {
 
   return (
     <section className="flex flex-col items-stretch">
-      <header className="grid grid-cols-5 w-full gap-4 -mr-5 max-w-full h-12">
+      <header className="w-full gap-4 -mr-5 max-w-full h-12">
         <input
           type="text"
-          className="border col-span-4 flex w-full flex-col rounded-xl border-solid border-gray-400 max-md:max-w-full p-2"
+          className="border flex w-full h-full flex-col rounded-xl border-solid border-gray-400 max-md:max-w-full p-2"
           aria-label="Main Navigation"
           value={searchWord}
           onChange={(e) => { setSearchWord(e.target.value) }}
         />
-        <button className="col-span-1 h-full items-center text-white text-xl relative bg-green-600 overflow-hidden w-full px-2 py-2 self-start rounded-xl">
-          Filter
-        </button>
       </header>
       {filteredRepositories.map((repo, index) => (
         <React.Fragment key={index}>
