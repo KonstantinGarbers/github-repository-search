@@ -1,7 +1,5 @@
  # Github Repository Search
 
-This is a brief description of your project.
-
 ## Setup
 To set up the project, you need to create a `credentials.ts` file in the `src` directory with your GitHub access token bound to the BEARER_TOKEN variable.
 
