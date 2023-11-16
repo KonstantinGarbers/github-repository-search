@@ -1,5 +1,5 @@
-import { UserState } from "../states/UserState";
+import { type UserState } from '../states/UserState'
 
 export interface UserActions {
-    updateUser: (user: UserState) => void;
+  updateUser: (user: UserState) => void
 }

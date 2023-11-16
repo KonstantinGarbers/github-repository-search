@@ -1,11 +1,11 @@
-import { RepositoryEdge } from "../RepositoryEdge";
+import { type RepositoryEdge } from '../RepositoryEdge'
 
 export interface UserState {
-  name: string;
-  bioHTML: string;
-  avatarUrl: string;
-  login: string;
+  name: string
+  bioHTML: string
+  avatarUrl: string
+  login: string
   repositories: {
-    edges: RepositoryEdge[];
-  };
+    edges: RepositoryEdge[]
+  }
 }

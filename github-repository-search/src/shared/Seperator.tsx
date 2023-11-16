@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { type ReactElement } from 'react'
 
 interface SeperatorProps {
-  vertical: boolean;
+  vertical: boolean
 }
 
-function Seperator( {vertical} : SeperatorProps ) {
-  const style = vertical ? "h-full mx-2" : "w-full my-2"; 
+function Seperator ({ vertical }: SeperatorProps): ReactElement {
+  const style = vertical ? 'h-full mx-2' : 'w-full my-2'
 
   return (
-    <div className={"bg-gray-400 " + style}></div>
-  );
+    <div className={'bg-gray-400 ' + style}></div>
+  )
 }
 
-export default Seperator;
+export default Seperator

@@ -1,7 +1,7 @@
-import React from "react";
-import { RepositoryNode } from "../../interfaces/RepositoryNode";
+import { type ReactElement } from 'react'
+import { type RepositoryNode } from '../../interfaces/RepositoryNode'
 
-function RepoCard(repo: RepositoryNode) {
+function RepoCard (repo: RepositoryNode): ReactElement {
   return (
     <div className="w-full bg-white border border-gray-200 rounded-lg p-4">
       <h2 className="text-lg font-semibold underline">
@@ -10,7 +10,7 @@ function RepoCard(repo: RepositoryNode) {
         </a>
       </h2>
       <div className="text-gray-600 text-sm mt-2">
-        <div dangerouslySetInnerHTML={{__html: repo.descriptionHTML}} />
+        <div dangerouslySetInnerHTML={{ __html: repo.descriptionHTML }} />
       </div>
       <div className="text-gray-600 text-sm mt-2">
         <span>{repo.primaryLanguage?.name}</span>
@@ -35,11 +35,11 @@ function RepoCard(repo: RepositoryNode) {
           <span>{repo.stargazerCount}</span>
         </div>
         <div className="text-gray-600 text-sm">
-          Updated at {repo.updatedAt?.toString().split("T")[0].replace(/-/g, "/")}
+          Updated at {repo.updatedAt?.toString().split('T')[0].replace(/-/g, '/')}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default RepoCard;
+export default RepoCard

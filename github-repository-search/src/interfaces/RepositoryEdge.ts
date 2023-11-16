@@ -1,4 +1,4 @@
-import { RepositoryNode } from "./RepositoryNode";
+import { type RepositoryNode } from './RepositoryNode'
 export interface RepositoryEdge {
-    node: RepositoryNode;
+  node: RepositoryNode
 }

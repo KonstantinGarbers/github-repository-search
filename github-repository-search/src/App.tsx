@@ -1,37 +1,40 @@
-import "./App.css";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Content from "./components/content/Content";
-import Seperator from "./shared/Seperator";
-import { useQuery, gql } from "@apollo/client";
-import { useGithubStore } from "./store/GithubStore";
-import { useParams } from "react-router-dom";
-import { GET_GITHUB } from "./queries/GET_GITHUB";
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import Content from './components/content/Content'
+import Seperator from './shared/Seperator'
+import { useQuery } from '@apollo/client'
+import { useGithubStore } from './store/GithubStore'
+import { useParams } from 'react-router-dom'
+import { GET_GITHUB } from './queries/GET_GITHUB'
+import { type ReactElement } from 'react'
 
-function App() {
-  const { login } = useParams();
+function App (): ReactElement {
+  const { login } = useParams()
   const { loading, error, data } = useQuery(GET_GITHUB, {
-    variables: { login },
-  });
-  const updateUser = useGithubStore((state) => state.updateUser);
+    variables: { login }
+  })
+  const updateUser = useGithubStore((state) => state.updateUser)
 
-  if (data) {
-    console.log(data);
-    updateUser(data.user);
+  if (!!data) {
+    updateUser(data.user)
   }
-  if (error) {
-    console.log(error);
+  if (!!error) {
+    console.log(error)
   }
 
   return (
     <>
       <Header />
       <main className="grid grid-cols-4 gap-0 pt-4 px-4">
-        {loading ? (
+        {!!loading
+          ? (
           <>Loading..</>
-        ) : error ? (
+            )
+          : !!error
+            ? (
           <>Error when fetching github user</>
-        ) : (
+              )
+            : (
           <>
             <div className="col-span-1 md:flex hidden">
               <>
@@ -43,10 +46,10 @@ function App() {
               <Content />
             </div>
           </>
-        )}
+              )}
       </main>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

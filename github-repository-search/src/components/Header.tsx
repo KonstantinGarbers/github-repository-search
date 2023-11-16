@@ -1,6 +1,6 @@
-import React from 'react';
+import { type ReactElement } from 'react'
 
-function Header() {
+function Header (): ReactElement {
   return (
     <section className="bg-slate-50 flex w-full flex-col px-4 py-5 max-md:max-w-full">
     <img
@@ -10,7 +10,7 @@ function Header() {
       alt="description"
     />
   </section>
-  );
+  )
 }
 
-export default Header;
+export default Header
