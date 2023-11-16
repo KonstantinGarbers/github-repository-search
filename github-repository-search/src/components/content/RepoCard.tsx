@@ -1,11 +1,11 @@
-import { type ReactElement } from 'react'
-import { type RepositoryNode } from '../../interfaces/RepositoryNode'
+import { type ReactElement } from "react";
+import { type RepositoryNode } from "../../interfaces/RepositoryNode";
 
 /**
  * A component that displays a logo.
  * @returns {ReactElement} The rendered header.
  */
-function RepoCard (repo: RepositoryNode): ReactElement {
+function RepoCard(repo: RepositoryNode): ReactElement {
   return (
     <div className="w-full bg-white border border-gray-200 rounded-lg p-4">
       <h2 className="text-lg font-semibold underline">
@@ -16,8 +16,14 @@ function RepoCard (repo: RepositoryNode): ReactElement {
       <div className="text-gray-600 text-sm mt-2">
         <div dangerouslySetInnerHTML={{ __html: repo.descriptionHTML }} />
       </div>
-      <div className="text-gray-600 text-sm mt-2">
-        <span>{repo.primaryLanguage?.name}</span>
+      <div className="my-2 flex items-center">
+        <div
+          className="h-4 w-4 rounded-full mr-2"
+          style={{ backgroundColor: repo.primaryLanguage?.color }}
+        />
+        <span className="text-gray-600 text-sm">
+          {repo.primaryLanguage?.name}
+        </span>
       </div>
       <div className="flex items-center justify-between mt-2">
         <div className="flex items-center text-gray-600 text-sm">
@@ -39,11 +45,12 @@ function RepoCard (repo: RepositoryNode): ReactElement {
           <span>{repo.stargazerCount}</span>
         </div>
         <div className="text-gray-600 text-sm">
-          Updated at {repo.updatedAt?.toString().split('T')[0].replace(/-/g, '/')}
+          Updated at{" "}
+          {repo.updatedAt?.toString().split("T")[0].replace(/-/g, "/")}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default RepoCard
+export default RepoCard;

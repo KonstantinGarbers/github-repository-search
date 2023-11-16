@@ -6,5 +6,5 @@ export interface RepositoryNode {
   url: string
   stargazerCount: number
   updatedAt: Date
-  primaryLanguage: Language
+  primaryLanguage?: Language
 }
