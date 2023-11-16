@@ -1,5 +1,8 @@
 import { type ReactElement } from 'react'
-
+/**
+ * A component that displays a logo.
+ * @returns {ReactElement} The rendered header.
+ */
 function Header (): ReactElement {
   return (
     <section className="bg-slate-50 flex w-full flex-col px-4 py-5 max-md:max-w-full">

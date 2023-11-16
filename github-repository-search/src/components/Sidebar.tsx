@@ -1,6 +1,12 @@
 import { type ReactElement } from 'react'
 import { useGithubStore } from '../store/GithubStore'
 
+/**
+ * A Zustand store for managing GitHub user data.
+ * The store includes the user's name, bio, avatar URL, login, and repositories.
+ * It also includes an action for updating the user.
+ * @type {Store}
+ */
 function Sidebar (): ReactElement {
   const bioHTML = useGithubStore((state) => state.bioHTML)
   const name = useGithubStore((state) => state.name)

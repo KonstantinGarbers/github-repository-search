@@ -1,6 +1,10 @@
 import { type ReactElement } from 'react'
 import { type RepositoryNode } from '../../interfaces/RepositoryNode'
 
+/**
+ * A component that displays a logo.
+ * @returns {ReactElement} The rendered header.
+ */
 function RepoCard (repo: RepositoryNode): ReactElement {
   return (
     <div className="w-full bg-white border border-gray-200 rounded-lg p-4">

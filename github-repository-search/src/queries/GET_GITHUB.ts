@@ -1,5 +1,11 @@
 import { gql } from '@apollo/client'
 
+/**
+ * A GraphQL query to fetch a user's details and their repositories.
+ * The user is identified by their login.
+ * The repositories are ordered by the number of stargazers in descending order.
+ * @type {DocumentNode}
+ */
 export const GET_GITHUB = gql`
     query GetGithub($login: String!) {
       user(login: $login) {

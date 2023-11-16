@@ -4,6 +4,11 @@ import RepoCard from './RepoCard'
 import { useGithubStore } from '../../store/GithubStore'
 import { type RepositoryEdge } from '../../interfaces/RepositoryEdge'
 
+/**
+ * A component that displays a list of GitHub repositories.
+ * It also includes a search bar for filtering the repositories.
+ * @returns {ReactElement} The rendered content.
+ */
 function Content (): ReactElement {
   const repositories: RepositoryEdge[] = useGithubStore(
     (state) => state.repositories.edges
@@ -11,7 +16,11 @@ function Content (): ReactElement {
   const [filteredRepositories, setFilteredRepositories] =
     useState(repositories)
   const [searchWord, setSearchWord] = useState('')
-
+  /**
+   * A useEffect hook that filters the repositories based on the search word.
+   * It removes any non-alphanumeric characters from the repository names and the search word before comparing them.
+   * It runs whenever the search word or the repositories change.
+   */
   useEffect(() => {
     const result = repositories.filter((repo) =>
       repo.node.name

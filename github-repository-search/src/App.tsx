@@ -8,6 +8,17 @@ import { useParams } from 'react-router-dom'
 import { GET_GITHUB } from './queries/GET_GITHUB'
 import { type ReactElement } from 'react'
 
+/**
+ * The main App component of the application.
+ *
+ * This component fetches data from GitHub using the `GET_GITHUB` query and the `login` parameter from the URL.
+ * If data is fetched successfully, it updates the user state using the `updateUser` function from the `useGithubStore` hook.
+ * If there's an error during the fetch, it logs the error to the console.
+ *
+ * @returns {ReactElement} The rendered App component, which includes the Header component and a main section.
+ * If data is still loading, it displays "Loading..".
+ * If there's an error, it doesn't display anything (this could be replaced with an error message or error component).
+ */
 function App (): ReactElement {
   const { login } = useParams()
   const { loading, error, data } = useQuery(GET_GITHUB, {
